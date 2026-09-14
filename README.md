@@ -181,7 +181,8 @@ per-class AP（E6 最终模型）：open 98.96 / short 99.18 / mousebite 99.18 /
 - 差分模型的**评估/可视化必须加 `--diff`**（输入分布与训练一致）；
 - 训练在 GPU（默认 `device: 0`）运行，无 GPU 时改 `--device cpu`；
 - DeepPCB 是二值化理想图像 + 人工增补缺陷，模型对真实含噪图像泛化有限
-  （详见 docs/paper_notes_2_dspcbsd.md 的讨论）。
+  （详见 Lv et al., *A dataset for deep learning based detection of printed circuit board
+  surface defect*, Scientific Data 11:811, 2024 对现有数据集局限性的讨论）。
 
 ## 文档
 
@@ -191,7 +192,6 @@ per-class AP（E6 最终模型）：open 98.96 / short 99.18 / mousebite 99.18 /
 | [docs/experiments.md](docs/experiments.md) | 全部消融实验记录（E1~E9，含跨种子稳定性）与结论 |
 | [docs/baseline_analysis.md](docs/baseline_analysis.md) | 基线模型训练结果深度分析（问题定位方法示例） |
 | [docs/paper_notes_1_deeppcb.md](docs/paper_notes_1_deeppcb.md) | DeepPCB 数据集原论文解读（数据构建 + GPP 模型） |
-| [docs/paper_notes_2_dspcbsd.md](docs/paper_notes_2_dspcbsd.md) | DsPCBSD+（真实产线数据集，Scientific Data 2024）论文解读 |
 
 ## Credits
 

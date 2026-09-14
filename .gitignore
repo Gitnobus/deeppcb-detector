@@ -8,3 +8,6 @@ outputs/
 
 # 本地实验跟踪文件（发布版本见 docs/experiments.md）
 TODO.md
+
+# 论文解读2 仅保留本地，不随仓库发布
+/docs/paper_notes_2_dspcbsd.md
