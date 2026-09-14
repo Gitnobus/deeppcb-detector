@@ -1,0 +1,10 @@
+# 实测环境: Python 3.12 / Windows 11 / CUDA 12.1 / RTX 3060
+# 安装: pip install -r requirements.txt
+# GPU 训练需安装与本机 CUDA 匹配的 PyTorch，参见 https://pytorch.org/get-started/locally/
+
+ultralytics==8.4.105      # YOLO 训练/推理（依赖 torch，按上链接种好 GPU 版即可）
+opencv-python>=4.8        # 图像读取/预处理/可视化（实测 5.0.0.93）
+numpy>=1.26
+PyYAML>=6.0
+matplotlib>=3.8           # ultralytics 训练曲线依赖
+gradio>=4.0               # 可视化页面（实测 6.27.0）

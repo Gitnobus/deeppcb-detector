@@ -1,0 +1,30 @@
+# preferred-citation 指向数据集原始论文（发布时也建议引用本项目自身）
+cff-version: 1.2.0
+title: "DeepPCB Detector: YOLO-based PCB surface defect detection with template-difference channels"
+message: "If you use this software, please cite it using the metadata below."
+type: software
+authors:
+  - name-given: guangsheng
+    name-family: zeng
+repository-code: "https://github.com/Gitnobus/deeppcb-detector"
+keywords:
+  - PCB defect detection
+  - object detection
+  - YOLO
+  - DeepPCB
+  - AOI
+license: MIT
+preferred-citation:
+  type: article
+  title: "Online PCB Defect Detector On A New PCB Defect Dataset"
+  authors:
+    - name-given: Sanli
+      name-family: Tang
+    - name-given: Fan
+      name-family: He
+    - name-given: Xiaolin
+      name-family: Huang
+    - name-given: Jie
+      name-family: Yang
+  journal: "arXiv preprint arXiv:1902.06197"
+  year: 2019

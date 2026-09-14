@@ -1,0 +1,41 @@
+# DeepPCB demo 全局配置
+# 路径中的相对路径均相对项目根目录（configs 的上一级）
+
+data_root: ./DeepPCB    # DeepPCB 数据集根目录（含 PCBData/）。不随仓库分发，需自行下载：
+                        # git clone https://github.com/tangsanli5201/DeepPCB
+                        # 可用环境变量 DEEPPCB_ROOT 或命令行 --data-root 覆盖此值
+dataset_dir: datasets/pcb               # 转换后 YOLO 数据集的输出位置
+output_dir: outputs                     # 评估结果 / 导出文件
+default_weights: weights/pcb_diff_yolov8n.pt
+# 随项目发布的默认权重：n_diff_v2（yolov8n + 模板差分3通道，imgsz960，seed42 best ep27）
+# 官方协议 mAP@0.33 = 99.25% / F-score 98.04% @ 0.47（评估须加 --diff）
+
+# 6 类缺陷，与官方标注 type 1~6 一一对应（索引 = type - 1）
+class_names:
+  - open
+  - short
+  - mousebite
+  - spur
+  - copper
+  - pin-hole
+
+train:
+  model: yolov8n.pt        # 预训练权重；首次运行自动下载（E1 已验证 s/m 无收益）
+  imgsz: 960               # 消融最优（n_imgsz960/n_diff 均为 960）；快速试跑可临时 --imgsz 640
+  epochs: 100              # 保持与消融实验一致的调度；实际耗时由 patience 早停控制
+  batch: 16                # imgsz 960 下 12GB 显存的稳妥值
+  close_mosaic: 30         # 与消融实验一致（n_diff 的最优 epoch 出现在 mosaic 开启阶段）
+  patience: 50             # 早停：fitness 由噪声较大的 mAP50-95 主导，patience=20 曾被
+                           # ep3 的单轮尖峰"锚定"导致欠训练（跨种子实验，见 TODO E7）；
+                           # 50 更稳妥：正常 ~25-30 轮收敛后最多多跑 20 轮，异常尖峰也有机会恢复
+  device: 0                # GPU id，CPU 改为 "cpu"
+  workers: 8
+  name: pcb_yolov8n        # runs/detect/<name>
+
+eval:
+  iou_threshold: 0.33      # 官方协议：同类 IoU > 0.33 判定命中
+  conf_threshold: 0.5      # F-score 报告用的置信度阈值（n_diff 最优 0.47，0.5 下可视化更干净）
+  imgsz: 960               # 必须与所评模型的训练 imgsz 一致
+
+app:
+  conf_threshold: 0.5      # 可视化页面默认置信度阈值

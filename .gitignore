@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+datasets/
+outputs/
+*.pt
+!weights/*.pt
+.DS_Store
+
+# 本地实验跟踪文件（发布版本见 docs/experiments.md）
+TODO.md
