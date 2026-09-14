@@ -207,9 +207,6 @@ per-class AP（E6 最终模型）：open 98.96 / short 99.18 / mousebite 99.18 /
 ## License
 
 本项目代码以 [MIT License](LICENSE) 开源（与 DeepPCB 数据集仓库一致）。
-发布前请将 LICENSE 首行的 `<YOUR_NAME_OR_GITHUB_ID>` 替换为你的署名，
-并同步更新 CITATION.cff 中的作者与仓库链接字段。
-
 数据集本身的使用遵循原作者的许可与用途限制（研究用途）；YOLOv8 权重的商业使用见上文 Credits 中的 AGPL-3.0 说明。
 
 ## 引用
