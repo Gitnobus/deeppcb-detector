@@ -1,11 +1,14 @@
-# preferred-citation 指向数据集原始论文（发布时也建议引用本项目自身）
+# 顶层元数据 = 本项目自身的引用信息（GitHub "Cite this repository" 按钮渲染的内容）
+# references = 使用本项目时建议一并引用的数据集论文
 cff-version: 1.2.0
 title: "DeepPCB Detector: YOLO-based PCB surface defect detection with template-difference channels"
-message: "If you use this software, please cite it using the metadata below."
+message: "If you use this software, please cite it using the metadata below, and the DeepPCB dataset paper under References."
 type: software
 authors:
   - name-given: guangsheng
     name-family: zeng
+version: 1.0.0
+date-released: "2026-09-14"
 repository-code: "https://github.com/Gitnobus/deeppcb-detector"
 keywords:
   - PCB defect detection
@@ -14,17 +17,26 @@ keywords:
   - DeepPCB
   - AOI
 license: MIT
-preferred-citation:
-  type: article
-  title: "Online PCB Defect Detector On A New PCB Defect Dataset"
-  authors:
-    - name-given: Sanli
-      name-family: Tang
-    - name-given: Fan
-      name-family: He
-    - name-given: Xiaolin
-      name-family: Huang
-    - name-given: Jie
-      name-family: Yang
-  journal: "arXiv preprint arXiv:1902.06197"
-  year: 2019
+references:
+  - type: article
+    title: "Online PCB Defect Detector On A New PCB Defect Dataset"
+    authors:
+      - name-given: Sanli
+        name-family: Tang
+      - name-given: Fan
+        name-family: He
+      - name-given: Xiaolin
+        name-family: Huang
+      - name-given: Jie
+        name-family: Yang
+    journal: "arXiv preprint arXiv:1902.06197"
+    year: 2019
+    url: "https://github.com/tangsanli5201/DeepPCB"
+  - type: article
+    title: "A dataset for deep learning based detection of printed circuit board surface defect"
+    authors:
+      - name-given: Shengping
+        name-family: Lv
+    journal: "Scientific Data 11:811"
+    year: 2024
+    doi: "10.1038/s41597-024-03656-8"
